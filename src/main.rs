@@ -2,9 +2,7 @@ use std::thread;
 use std::time::Duration;
 use std::sync::{Mutex, Arc};
 
-struct Table {
-    forks: Vec<Mutex<()>>,
-}
+
 
 struct Philosopher {
     name: String,
@@ -34,6 +32,10 @@ impl Philosopher {
 
         println!("{} is done eating.", self.name);
     }
+}
+
+struct Table {
+    forks: Vec<Mutex<()>>,
 }
 
 fn main() {
